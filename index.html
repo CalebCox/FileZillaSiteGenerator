@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 
+This HTML file is designed to function with a corresponding Base64 Javascript file.
+ -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSV File Converter</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <h1>CSV File Converter</h1>
+    <main>
+      <div class="top">
+        <p>This application allows for the importing of a .csv file following the template structure provided below to be used to convert client data into JSON or FileZilla Site Settings XML for easy creation of FileZilla site's within the Site Manager via FileZilla's built in Import function.</p>
+        <h4>CSV Example</h4>
+        <p>The top row should remain unchanged, this provides the application with the key values necessary to properly parse the data. Each row underneath is where you should provide the required values.</p>
+        <table>
+          <tr>
+            <th>name</th>
+            <th>host</th>
+            <th>port</th>
+            <th>username</th>
+            <th>password</th>
+            <th>directory</th>
+          </tr>
+          <tr>
+            <td>Site Name</td>
+            <td>Site Host</td>
+            <td>Site Port Number</td>
+            <td>Site User Name</td>
+            <td>Site Password</td>
+            <td>Remote Directory</td>
+          </tr>
+        </table>
+        <h4>How to Use:</h4>
+        <ol>
+          <li>Enter a filename (ex: <em>client_name</em>) this will append the provided name to the downloaded file (ie: <em>client_name</em>_site_import.xml) <sup>optional</sup></li>
+          <li>Select options for exported data. (ex: Remove passwords from uploaded data before conversion)</li>
+          <li>Select your CSV file that contains the data you want converted.</li>
+          <li>Download the file format you need.</li>
+        </ol>
+      </div>
+      <div class="controls">
+        <input id="filename" type="text" placeholder="Filename">
+        <input id="password" type="checkbox" name="password">
+        <label for="password">Remove Password</label>
+        <label for="file">Select a CSV file to convert</label>
+        <input id="file"type="file" name="file" accept=".csv">
+        <button class="dlJSON" disabled>Download JSON</button>
+        <button class="dlXML" disabled>Download XML</button>
+      </div>
+    </main>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+  </body>
+</html>
